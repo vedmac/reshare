@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "reshare"
+version = "0.1.0"
+description = "webapp that lets you create your own recipes and share them with other people. You can also subscribe to recipe authors and add recipes to your shopping list and download the list with all ingredients you need."
+authors = ["Viktor Ermolov <viktor@ermolov.dev>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.5"
+Pillow = "^8.3.0"
+sorl-thumbnail = "^12.7.0"
+wkhtmltopdf = "^0.2"
+djangorestframework = "^3.12.4"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+autopep8 = "^1.5.7"
+pycodestyle = "^2.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
