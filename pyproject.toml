@@ -12,6 +12,7 @@ Pillow = "^8.3.0"
 sorl-thumbnail = "^12.7.0"
 wkhtmltopdf = "^0.2"
 djangorestframework = "^3.12.4"
+django-autoslug = "^1.9.8"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.7"
