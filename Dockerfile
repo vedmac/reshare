@@ -7,7 +7,8 @@ WORKDIR /usr/src/web
 COPY /. .
 
 RUN apt update && apt install wkhtmltopdf -y \
-    && pip install --upgrade pip && pip install poetry \
+	&& apt-get autoremove -y && apt-get autoclean -y \
+    && pip install poetry \
     && poetry config virtualenvs.create false && poetry install --no-dev
 
 RUN chmod a+x /usr/src/web/entrypoint.sh
