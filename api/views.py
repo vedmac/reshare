@@ -6,8 +6,10 @@ from rest_framework.response import Response
 from recipes.models import Ingredient
 
 from .models import Favorite, Subscription
-from .serializers import (FavoriteSerializer, IngredientSerializer,
-                          PurchaseSerializer, SubscriptionSerializer)
+from .serializers import (
+    FavoriteSerializer, IngredientSerializer, PurchaseSerializer,
+    SubscriptionSerializer,
+)
 
 
 class CreateDestroyViewSet(mixins.CreateModelMixin,
