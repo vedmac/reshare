@@ -19,6 +19,7 @@ autopep8 = "^1.5.7"
 pycodestyle = "^2.7.0"
 isort = "^5.9.1"
 flake8 = "^3.9.2"
+pytest-django = "^4.4.0"
 
 [tool.isort]
 profile = "django"
