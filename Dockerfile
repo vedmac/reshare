@@ -6,9 +6,9 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /usr/src/web
 COPY /. .
 
-RUN apt update && apt install wkhtmltopdf -y
-RUN pip install --upgrade pip && pip install poetry 
-RUN poetry config virtualenvs.create false && poetry install --no-dev
+RUN apt update && apt install wkhtmltopdf -y \
+    && pip install --upgrade pip && pip install poetry \
+    && poetry config virtualenvs.create false && poetry install --no-dev
 
 RUN chmod a+x /usr/src/web/entrypoint.sh
 ENTRYPOINT [ "/usr/src/web/entrypoint.sh" ]
