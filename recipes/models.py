@@ -8,16 +8,16 @@ User = get_user_model()
 
 class Ingredient(models.Model):
     title = models.CharField(
-        'Название ингредиента',
+        'Ingredient name',
         max_length=256,
         db_index=True
     )
-    dimension = models.CharField('Единица измерения', max_length=64)
+    dimension = models.CharField('Dimension', max_length=64)
 
     class Meta:
         ordering = ('title', )
-        verbose_name = 'ингредиент'
-        verbose_name_plural = 'ингредиенты'
+        verbose_name = 'ingredient'
+        verbose_name_plural = 'ingredients'
 
     def __str__(self):
         return f'{self.title}, {self.dimension}'
@@ -28,33 +28,33 @@ class Recipe(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='recipes',
-        verbose_name='Автор рецепта'
+        verbose_name='Recipe author'
     )
-    title = models.CharField('Название рецепта', max_length=200)
-    image = models.ImageField('Изображение', upload_to='recipes/')
-    text = models.TextField('Текст рецепта')
+    title = models.CharField('Recipe name', max_length=200)
+    image = models.ImageField('Image', upload_to='recipes/')
+    text = models.TextField('Recipe text')
     ingredients = models.ManyToManyField(
         Ingredient,
         through='RecipeIngredient',
-        verbose_name='Ингредиент'
+        verbose_name='Ingredient'
     )
-    cooking_time = models.PositiveSmallIntegerField('Время приготовления')
+    cooking_time = models.PositiveSmallIntegerField('Cooking time')
     slug = AutoSlugField(populate_from='title', allow_unicode=True)
     tags = models.ManyToManyField(
         'Tag',
         related_name='recipes',
-        verbose_name='Теги'
+        verbose_name='Tags'
     )
     pub_date = models.DateTimeField(
-        'Дата публикации',
+        'Date of publication',
         auto_now_add=True,
         db_index=True
     )
 
     class Meta:
         ordering = ('-pub_date', )
-        verbose_name = 'рецепт'
-        verbose_name_plural = 'рецепты'
+        verbose_name = 'recipe'
+        verbose_name_plural = 'recipes'
 
     def __str__(self):
         return self.title
@@ -78,13 +78,13 @@ class RecipeIngredient(models.Model):
 
 
 class Tag(models.Model):
-    title = models.CharField('Имя тега', max_length=50, db_index=True)
-    display_name = models.CharField('Имя тега для шаблона', max_length=50)
-    color = models.CharField('Цвет тега', max_length=50)
+    title = models.CharField('Tag name', max_length=50, db_index=True)
+    display_name = models.CharField('Tag name for template', max_length=50)
+    color = models.CharField('Tag color', max_length=50)
 
     class Meta:
-        verbose_name = 'тег'
-        verbose_name_plural = 'теги'
+        verbose_name = 'tag'
+        verbose_name_plural = 'tags'
 
     def __str__(self):
         return self.title

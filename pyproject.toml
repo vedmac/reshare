@@ -13,6 +13,8 @@ sorl-thumbnail = "^12.7.0"
 wkhtmltopdf = "^0.2"
 djangorestframework = "^3.12.4"
 django-autoslug = "^1.9.8"
+pdfkit = "^0.6.1"
+python-dotenv = "^0.18.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.7"

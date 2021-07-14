@@ -11,19 +11,19 @@ class Favorite(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='favorites',
-        verbose_name='Пользователь',
+        verbose_name='User',
     )
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
         related_name='favored_by',
-        verbose_name='Рецепт в избранном',
+        verbose_name='Add to favorite',
     )
 
     class Meta:
         unique_together = ('user', 'recipe')
-        verbose_name = 'Избранный рецепт'
-        verbose_name_plural = 'Избранные рецепты'
+        verbose_name = 'Favorite recipes'
+        verbose_name_plural = 'Favorite recipes'
 
 
 class Subscription(models.Model):
@@ -31,19 +31,19 @@ class Subscription(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='follower',
-        verbose_name='Подписался на',
+        verbose_name='Follow',
     )
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name='following',
-        verbose_name='Подписчик',
+        verbose_name='Follower',
     )
 
     class Meta:
         unique_together = ('user', 'author')
-        verbose_name = 'Подписка'
-        verbose_name_plural = 'Подписки'
+        verbose_name = 'Subscription'
+        verbose_name_plural = 'Subscriptions'
 
 
 class Purchase(models.Model):
@@ -51,15 +51,15 @@ class Purchase(models.Model):
         User,
         on_delete=models.CASCADE,
         related_name='purchases',
-        verbose_name='Пользователь',
+        verbose_name='User',
     )
     recipe = models.ForeignKey(
         Recipe,
         on_delete=models.CASCADE,
-        verbose_name='Рецепт в покупках',
+        verbose_name='Recipe in shopping list',
     )
 
     class Meta:
         unique_together = ('user', 'recipe')
-        verbose_name = 'Покупка'
-        verbose_name_plural = 'Покупки'
+        verbose_name = 'Purchase'
+        verbose_name_plural = 'Purchases'

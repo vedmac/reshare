@@ -13,4 +13,4 @@ RUN apt update && apt install wkhtmltopdf -y \
 
 RUN chmod a+x /usr/src/web/entrypoint.sh
 ENTRYPOINT [ "/usr/src/web/entrypoint.sh" ]
-CMD gunicorn foodgram.wsgi:application --bind 0.0.0.0:8000
+CMD gunicorn reshare.wsgi:application --bind 0.0.0.0:8000
