@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/Bytlot/reshare/workflows/CI/badge.svg)](https://github.com/Bytlot/reshare/actions)
+[![Actions Status](https://github.com/Bytlot/reshare/workflows/reshare/badge.svg)](https://github.com/Bytlot/reshare/actions)
 [![Actions Status](https://github.com/Bytlot/reshare/workflows/CodeQL/badge.svg)](https://github.com/Bytlot/reshare/actions)
 
 
