@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "reshare"
-version = "0.1.2"
+version = "0.0.1"
 description = "webapp that lets you create your own recipes and share them with other people. You can also subscribe to recipe authors and add recipes to your shopping list and download the list with all ingredients you need."
 authors = ["Viktor Ermolov <viktor@ermolov.dev>"]
 license = "MIT"
