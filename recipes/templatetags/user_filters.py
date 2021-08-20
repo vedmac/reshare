@@ -1,7 +1,7 @@
-from django import template
+from api.models import Favorite, Purchase, Subscription
 from django.contrib.auth import get_user_model
 
-from api.models import Favorite, Purchase, Subscription
+from django import template
 
 register = template.Library()
 User = get_user_model()
